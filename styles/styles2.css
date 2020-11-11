@@ -1,0 +1,176 @@
+/* line 6, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+.slider {
+  position: relative;
+  width: 70%;
+  overflow: hidden; }
+  /* line 13, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider__slides {
+    z-index: 0;
+    position: relative;
+    height: 100%; }
+  /* line 19, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider__control {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    border-radius: 50%;
+    background: #fff;
+    transition: background-color 0.3s;
+    cursor: pointer; }
+    /* line 33, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slider__control--right {
+      left: 95%; }
+    /* line 37, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slider__control:hover {
+      background-color: #e6fbff;
+      color: black; }
+    /* line 42, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slider__control-line {
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      width: 3px;
+      height: 14px;
+      transform-origin: 50% 0;
+      transform: rotate(-45deg); }
+      /* line 51, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control-line:nth-child(2) {
+        transform: translateY(1px) rotate(-135deg); }
+      /* line 55, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control--right .slider__control-line {
+        left: 37px;
+        transform-origin: 1px 0;
+        transform: rotate(45deg); }
+        /* line 60, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+        .slider__control--right .slider__control-line:nth-child(2) {
+          transform: translateY(1px) rotate(135deg); }
+      /* line 65, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control-line:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e2e2e2;
+        transition: background-color 0.3s; }
+      /* line 76, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control:hover .slider__control-line:after {
+        background-color: #000000; }
+      /* line 82, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control.a--rotation .slider__control-line:after {
+        animation: arrowLineRotation 0.49s; }
+      /* line 86, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+      .slider__control.a--rotation .slider__control-line:nth-child(1):after {
+        animation: arrowLineRotationRev 0.49s; }
+
+@keyframes arrowLineRotation {
+  to {
+    transform: rotate(180deg); } }
+
+@keyframes arrowLineRotationRev {
+  to {
+    transform: rotate(-180deg); } }
+
+@media screen and (max-width: 922px) {
+  /* line 111, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider__control:nth-child(2) {
+    left: 10%; }
+  /* line 114, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider__control--right {
+    left: 90%; } }
+
+@media screen and (max-width: 600px) {
+  /* line 120, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider {
+    width: 100%; } }
+
+@media screen and (max-width: 420px) {
+  /* line 125, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slider {
+    display: none; } }
+
+/* line 130, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+.slide {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: clip-path 0s 0.91s;
+  clip-path: circle(30px at 120vw 50%); }
+  /* line 142, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide.s--prev {
+    clip-path: circle(30px at 30vw 50%); }
+  /* line 146, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide.s--active {
+    z-index: 1;
+    transition: clip-path 1.3s;
+    clip-path: circle(120vmax at 120vw 50%); }
+    /* line 151, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slide.s--active.s--active-prev {
+      clip-path: circle(120vmax at 30vw 50%); }
+  /* line 158, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide:nth-child(1) .slide__inner {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-2.jpg"); }
+  /* line 158, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide:nth-child(2) .slide__inner {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-3.jpg"); }
+  /* line 158, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide:nth-child(3) .slide__inner {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-4.jpg"); }
+  /* line 158, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide:nth-child(4) .slide__inner {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-5.jpg"); }
+  /* line 158, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide:nth-child(5) .slide__inner {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-6.jpg"); }
+  /* line 164, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide__inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -50vw;
+    margin-top: -50vh;
+    background-size: cover;
+    background-position: center center; }
+    /* line 175, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slide__inner:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); }
+  /* line 186, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide__content {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    margin-left: -30px;
+    margin-top: 48px;
+    max-width: 480px;
+    color: #fff; }
+  /* line 196, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide__heading {
+    margin-bottom: 20px;
+    font-size: 60px; }
+  /* line 201, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+  .slide__text {
+    font-size: 25px; }
+    /* line 204, /Users/jessedevries/Desktop/Fermic/styles/styles2.scss */
+    .slide__text a {
+      color: inherit; }
+
+/*# sourceMappingURL=styles2.css.map */
